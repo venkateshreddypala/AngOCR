@@ -1,0 +1,42 @@
+<mat-toolbar color="primary"> 
+  <mat-toolbar-row>	
+	Tesseract
+  </mat-toolbar-row>
+  
+  </mat-toolbar>
+  <div class="row">
+  <div class="col m1">
+  </div>
+  <div class="col m6">
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-actions>
+    
+	
+    <input type="file" id="selectedFile" style="display: none;" (change)="onFileChange($event)" />
+	<button color="warn" mat-button mat-raised-button onclick="document.getElementById('selectedFile').click();" >Browse</button>
+
+  </mat-card-actions>
+  </mat-card-header>
+  <img *ngIf="showImg" mat-card-image src="{{img}}">
+  
+  
+</mat-card>
+</div>
+<div class="col m4">
+<mat-card class="example-card">
+<mat-spinner *ngIf="showP" diameter="50"></mat-spinner>
+<mat-card-header>
+    <mat-card-actions>
+	<button *ngIf="!showP" color="warn" mat-button mat-raised-button (click)="download()" >Download</button>
+	</mat-card-actions>
+  </mat-card-header>
+<mat-card-content>
+    <p>
+      {{txt}}
+    </p>
+  </mat-card-content>
+  </mat-card>
+</div>
+</div>
+  
